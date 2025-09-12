@@ -4,8 +4,13 @@ def weight_converter():
     
     # 提取数字部分和单位部分
     # 单位在最后两个字符，其余部分是数字
-    num_str = s[:-2]
+    if len(s) < 2:
+        print("输入格式错误")
+        return
+    
+    # 获取最后两个字符作为单位
     unit = s[-2:]
+    num_str = s[:-2]
     
     # 将数字部分转换为浮点数
     try:
